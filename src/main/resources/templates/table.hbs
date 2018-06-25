@@ -1,0 +1,46 @@
+{{#partial "mainCss"}}
+    <link rel="stylesheet" type="text/css" href="/css/tableUtil.css">
+    <link rel="stylesheet" type="text/css" href="/css/table.css">
+{{/partial}}
+
+{{#partial "meta"}}
+    <meta http-equiv="refresh" content="{{refreshTime}}">
+{{/partial}}
+
+{{#partial "content"}}
+    <div class="container-login100">
+        <div class="container-table100">
+            <div class="wrap-table100">
+                <div class="table100">
+                    <table>
+                        <thead>
+                        <tr class="table100-head">
+                            <th class="column1">Date</th>
+                            <th class="column2">Public Id</th>
+                            <th class="column3">Name</th>
+                            <th class="column4">Amount</th>
+                            <th class="column5">Description</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {{#each transactions}}
+
+                            <tr>
+                                <td class="column1">{{created}}</td>
+                                <td class="column2">{{publicId}}</td>
+                                <td class="column3">{{fromUser}}</td>
+                                <td class="column4">{{amount}}</td>
+                                <td class="column5">{{description}}</td>
+                            </tr>
+
+                        {{/each}}
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+{{/partial}}
+{{> base.hbs}}

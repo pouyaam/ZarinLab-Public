@@ -1,0 +1,70 @@
+{{#partial "mainCss"}}
+    <link rel="stylesheet" type="text/css" href="/css/util.css">
+    <link rel="stylesheet" type="text/css" href="/css/main.css">
+{{/partial}}
+
+{{#partial "content"}}
+    <div class="container-login100">
+        <div class="wrap-login100 p-b-160 p-t-50">
+            <span class="login100-form-title p-b-43">
+						Welcome to ZarinLab
+					</span>
+
+            {{#if isNotZarinPalConnected}}
+                {{#if isNotSmsSent}}
+                    <form action="/login/otp/request" method="post" class="login100-form validate-form">
+                        <div class="wrap-input100 rs1 validate-input" data-validate="Username is required">
+                            <input class="input100" type="text" name="username">
+                            <span class="label-input100">Zarinpal Username</span>
+                        </div>
+
+
+                        <div class="container-login100-form-btn">
+                            <button class="login100-form-btn">
+                                Request Code
+                            </button>
+                        </div>
+
+                    </form>
+                {{else}}
+                    <form action="/login/otp/verify" method="post">
+                        <div class="wrap-input100 rs1 validate-input" data-validate="Zarinpal Code required">
+                            <input class="input100" type="text" name="otp">
+                            <span class="label-input100">Zarinpal Code</span>
+                            <input value={{username}} type="text" name="username" hidden>
+                        </div>
+
+
+                        <div class="container-login100-form-btn">
+                            <button class="login100-form-btn">
+                                Verify Code
+                            </button>
+                        </div>
+                    </form>
+                {{/if}}
+
+            {{else}}
+                <a href="/transactions">
+                    <div class="container-form-btn">
+                        <button class="form100-form-btn">
+                            ZarinPal Transactions
+                        </button>
+                    </div>
+                </a>
+            {{/if}}
+
+
+            {{#if isNotStreamlabConnected}}
+                <form action="/login/streamlabs/authorization" method="post">
+                    <div class="container-form-btn">
+                        <button class="form100-form-btn">
+                            Connect Streamlabs
+                        </button>
+                    </div>
+                </form>
+            {{/if}}
+        </div>
+    </div>
+    </div>
+{{/partial}}
+{{> base.hbs}}
