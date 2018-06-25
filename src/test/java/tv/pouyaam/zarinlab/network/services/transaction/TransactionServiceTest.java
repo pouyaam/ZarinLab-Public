@@ -46,7 +46,7 @@ public class TransactionServiceTest {
     @Test
     public void transactionMustBeRetrievedSuccessfully() throws Exception {
         TokenModel tokenModel
-                = new TokenModel(1000, "4b8422c2f02eca652e0eba1664b28cf97ca58cf302f4c6f5dd7d5c4062f2752dc8c36eb3946801b6", "", TokenModel.TOKEN_TYPE.ZARINPAL);
+                = new TokenModel(1000, "   ", "", TokenModel.TOKEN_TYPE.ZARINPAL);
         mSql2oAuthDao.addToken(tokenModel);
 
         TransactionService transactionService =
@@ -66,7 +66,7 @@ public class TransactionServiceTest {
     public void transactionAccessTokenInvalid() throws Exception {
 
         TokenModel tokenModel
-                = new TokenModel(1000, "4b8422c2f02eca652e0eba1664b28cf97ca58cf302f4c6f5dd7d5c4062f2752dc8c36eb3946801b7", "", TokenModel.TOKEN_TYPE.ZARINPAL);
+                = new TokenModel(1000, "    ", "", TokenModel.TOKEN_TYPE.ZARINPAL);
         mSql2oAuthDao.addToken(tokenModel);
 
         TransactionService transactionService =

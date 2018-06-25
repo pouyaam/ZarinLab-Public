@@ -28,14 +28,6 @@ public class ZarinpalRequestCodeServiceTest {
 
     @Test
     public void requestSmsForSpecificNumber() throws Exception {
-//        ZarinpalRequestCodeService requestSmsService = new ZarinpalRequestCodeService.Builder().retrofit(mRetrofit).build();
-//
-//        SmsCodeRequest smsCodeRequest = new SmsCodeRequest.Builder().channel("sms").username("09120208779").build();
-//
-//        requestSmsService.initRetrofitCall(smsCodeRequest, null, null, null);
-//
-//        Response<ZarinpalOtpResponse> responseResponse = requestSmsService.execute();
-//
-//        assertEquals(200, responseResponse.body().getMetaData().getCode());
+
     }
 }
